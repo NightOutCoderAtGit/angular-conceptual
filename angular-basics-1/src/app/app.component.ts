@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { StudentDashboardMoudle } from './student-dashboard/student-dashboad.module';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule],
+  imports: [CommonModule, RouterOutlet, FormsModule, StudentDashboardMoudle],
   //templateUrl: './app.component.html',
   template: `
     <div class = "data">
-
+      <student-dashboard></student-dashboard>
       <!--One way data binding-->
       <!-- 
       <button (click)="handleClick($event)">Reset</button>
@@ -32,7 +34,15 @@ import { FormsModule } from '@angular/forms';
       <input type="text" #inputData>
       <div> {{ name }} </div> 
       -->
-      
+
+      <!-- Example of *ngIf -->
+      <!-- <input type="text" [value]="name" (input)="inputData($event)">  -->
+      <!-- element.value = name -->
+      <!-- <div *ngIf="name.length">
+            Input Data is ... {{ name }}
+      </div> -->
+
+
     </div>
   `,
   styleUrl: './app.component.css'
@@ -40,6 +50,8 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title;
   name: string = 'Basics'
+
+ 
 
   constructor(){
     this.title = 'angular-basics-1';
@@ -64,5 +76,8 @@ export class AppComponent {
 
   handleClickRef(value: any){
     this.name = value;
+  }
+  inputData(event: any){
+    this.name = event.target.value;
   }
 }
