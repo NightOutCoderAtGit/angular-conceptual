@@ -1,0 +1,15 @@
+# Starters commands
+yarn install
+yarn start
+
+# JSON server
+In order to use json server we need to run below commands
+
+# Prerequisite
+Create db.json file with some data
+
+# Commands
+npm install json-server
+npx json-server --watch db.json
+
+

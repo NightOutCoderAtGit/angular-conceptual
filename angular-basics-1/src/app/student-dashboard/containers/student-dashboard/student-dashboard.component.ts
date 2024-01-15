@@ -35,7 +35,10 @@ export class StudentDashboardComponent implements OnInit {
 
     ngOnInit(): void {
       console.log('--ngOnInit Student Dashboard--');
-      this.students = this.studentDashboardService.getStudent();
+      this.studentDashboardService.getStudent().subscribe((data: Students[]) => {
+        console.log(data);
+        this.students = data;
+      })
       //   {
       //     id:123,
       //     name: 'John',

@@ -1,6 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Students } from "../models/student-dashboard.interface";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+
+const STUDENTS_API : string = 'http://localhost:3000/students';
 
 @Injectable()
 export class StudentDashboadService {
@@ -8,40 +11,7 @@ export class StudentDashboadService {
       console.log(httpClient);
     }
 
-    getStudent(): Students[] {
-        return [
-            {
-              id:123,
-              name: 'John',
-              isEnrolled: true,
-              enrollDate: 19873243243,
-              guardian: [{ name: 'Rita', age: 45}]
-            },
-            {
-              id:323,
-              name: 'Tohn',
-              isEnrolled: false,
-              enrollDate: null,
-              guardian: [{ name: 'Lita', age: 45}]
-            },
-            {
-              id:143,
-              name: 'Sohn',
-              isEnrolled: false,
-              guardian: null
-            },
-            {
-              id:356,
-              name: 'Zohn',
-              isEnrolled: false,
-            },
-            {
-              id:423,
-              name: 'Rohn',
-              isEnrolled: true,
-              enrollDate: 1243243243,
-              guardian: [{ name: 'Nita', age: 55}, { name: 'Lita', age: 65}]
-            },
-          ];
+    getStudent(): Observable<Students[]> {  
+      return this.httpClient.get<Students[]>(STUDENTS_API);
     }
 }
