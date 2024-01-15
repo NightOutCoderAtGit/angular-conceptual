@@ -1,8 +1,11 @@
+import { HttpClient } from "@angular/common/http";
 import { Students } from "../models/student-dashboard.interface";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class StudentDashboadService {
-    constructor(){
-
+    constructor(private httpClient: HttpClient){
+      console.log(httpClient);
     }
 
     getStudent(): Students[] {

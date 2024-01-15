@@ -4,6 +4,7 @@ import { StudentDashboardComponent } from "./containers/student-dashboard/studen
 import { StudentCount } from "./components/student-count/student-count.component";
 import { StudentDetails } from "./components/student-details/student-details.component";
 import { StudentDashboadService } from "./student-dashboard.service";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { StudentDashboadService } from "./student-dashboard.service";
             StudentDetails
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        HttpClientModule
     ],
     exports:[
         StudentDashboardComponent,
