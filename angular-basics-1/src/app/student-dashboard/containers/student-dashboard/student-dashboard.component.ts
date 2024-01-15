@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Students } from "../../../models/student-dashboard.interface";
+import { StudentDashboadService } from "../../student-dashboard.service";
 
 
 @Component({
@@ -28,46 +29,46 @@ import { Students } from "../../../models/student-dashboard.interface";
 export class StudentDashboardComponent implements OnInit {
   students: Students[] = [];
 
-    constructor(){
+    constructor(private studentDashboardService: StudentDashboadService){
       console.log('--Constructor Student Dashboard--');
     }
 
     ngOnInit(): void {
       console.log('--ngOnInit Student Dashboard--');
-      this.students = [
-        {
-          id:123,
-          name: 'John',
-          isEnrolled: true,
-          enrollDate: 19873243243,
-          guardian: [{ name: 'Rita', age: 45}]
-        },
-        {
-          id:323,
-          name: 'Tohn',
-          isEnrolled: false,
-          enrollDate: null,
-          guardian: [{ name: 'Lita', age: 45}]
-        },
-        {
-          id:143,
-          name: 'Sohn',
-          isEnrolled: false,
-          guardian: null
-        },
-        {
-          id:356,
-          name: 'Zohn',
-          isEnrolled: false,
-        },
-        {
-          id:423,
-          name: 'Rohn',
-          isEnrolled: true,
-          enrollDate: 1243243243,
-          guardian: [{ name: 'Nita', age: 55}, { name: 'Lita', age: 65}]
-        },
-      ];
+      this.students = this.studentDashboardService.getStudent();
+      //   {
+      //     id:123,
+      //     name: 'John',
+      //     isEnrolled: true,
+      //     enrollDate: 19873243243,
+      //     guardian: [{ name: 'Rita', age: 45}]
+      //   },
+      //   {
+      //     id:323,
+      //     name: 'Tohn',
+      //     isEnrolled: false,
+      //     enrollDate: null,
+      //     guardian: [{ name: 'Lita', age: 45}]
+      //   },
+      //   {
+      //     id:143,
+      //     name: 'Sohn',
+      //     isEnrolled: false,
+      //     guardian: null
+      //   },
+      //   {
+      //     id:356,
+      //     name: 'Zohn',
+      //     isEnrolled: false,
+      //   },
+      //   {
+      //     id:423,
+      //     name: 'Rohn',
+      //     isEnrolled: true,
+      //     enrollDate: 1243243243,
+      //     guardian: [{ name: 'Nita', age: 55}, { name: 'Lita', age: 65}]
+      //   },
+      // ];
     }
 
     handleRemove(event: Students){
