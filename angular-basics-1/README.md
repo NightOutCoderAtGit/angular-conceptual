@@ -25,3 +25,62 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Dummy Test Data
+
+{
+  "students": [
+    {
+      "id": "123",
+      "name": "John123",
+      "isEnrolled": true,
+      "enrollDate": 19873243243,
+      "guardian": [
+        {
+          "name": "Rita",
+          "age": 45
+        }
+      ]
+    },
+    {
+      "id": "323",
+      "name": "TohnaaaAAA",
+      "isEnrolled": false,
+      "enrollDate": null,
+      "guardian": [
+        {
+          "name": "Lita",
+          "age": 45
+        }
+      ]
+    },
+    {
+      "id": "143",
+      "name": "Sohn",
+      "isEnrolled": false,
+      "guardian": null
+    },
+    {
+      "id": "356",
+      "name": "Zohn",
+      "isEnrolled": false
+    },
+    {
+      "id": "423",
+      "name": "RohnA",
+      "isEnrolled": true,
+      "enrollDate": 1243243243,
+      "guardian": [
+        {
+          "name": "Nita",
+          "age": 55
+        },
+        {
+          "name": "Lita",
+          "age": 65
+        }
+      ]
+    }
+  ]
+}

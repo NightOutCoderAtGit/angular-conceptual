@@ -12,4 +12,7 @@ Create db.json file with some data
 npm install json-server
 npx json-server --watch db.json
 
+# End points for data
+http://localhost:3000/students
+
 

@@ -5,6 +5,7 @@ import { StudentCount } from "./components/student-count/student-count.component
 import { StudentDetails } from "./components/student-details/student-details.component";
 import { StudentDashboadService } from "./student-dashboard.service";
 import { HttpClientModule } from "@angular/common/http";
+import { StudentViewerComponent } from "./containers/student-viewer/student-viewer.component";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { HttpClientModule } from "@angular/common/http";
             // All the component of this module
             StudentDashboardComponent,
             StudentCount,
-            StudentDetails
+            StudentDetails,
+            StudentViewerComponent
     ],
     imports: [
         CommonModule,
@@ -20,6 +22,7 @@ import { HttpClientModule } from "@angular/common/http";
     ],
     exports:[
         StudentDashboardComponent,
+        StudentViewerComponent
     ],
     providers: [
         StudentDashboadService

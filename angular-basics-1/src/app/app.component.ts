@@ -13,6 +13,7 @@ import { StudentDashboardMoudle } from './student-dashboard/student-dashboad.mod
   template: `
     <div class = "data">
       <student-dashboard></student-dashboard>
+      <student-viewer></student-viewer>
       <!--One way data binding-->
       <!-- 
       <button (click)="handleClick($event)">Reset</button>
